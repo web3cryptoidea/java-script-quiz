@@ -35,7 +35,7 @@ function showQuestion() {
 }
 var wins = 0;
 
-var secondsLeft = 160;
+var secondsLeft = 76;
 
 function checkAnswer(userInput) {
 
