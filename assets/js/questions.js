@@ -12,7 +12,7 @@ var questions =[
      choices: ["numbers and strings", "other arrays", "booleans", "all above"],
      answer: "D",
     }, 
-    {question: "A very useful tool used durung development and debugging for printing content for the debugger is:",
+    {question: "A very useful tool used during development and debugging for printing content for the debugger is:",
       choices: ["JavaScript", "Terminal/bash", "for loops","console.log"],
       answer: "D", 
     },

@@ -14,7 +14,7 @@ function displayHighscores() {
     let highscores = JSON.parse(localStorage.getItem("highscores")) || [];
     console.log(highscores);
      
-    // Clear any existing highscores from the list
+    // Clear any highscores from the list
     totalhighscore.innerHTML = "";
 
     // Add a list item for each highscore

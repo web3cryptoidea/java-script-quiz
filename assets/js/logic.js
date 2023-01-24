@@ -1,25 +1,22 @@
 var totalres = document.querySelector("#final-score");
-
 var startscr = document.querySelector("#start-screen");
 var endscr = document.querySelector("#end-screen");
 var submbtn = document.querySelector("#submit");
 var questionscr = document.querySelector("questions");
 
-// A variable to keep track of the current question
+// A variable for the current question
 let currentQuestion = 0;
 
 function showQuestion() {
   startscr.classList.add("hide"); 
-  // questionscr.classList.remove("hide"); 
-  // Get the current question object
   const q = questions[currentQuestion];
-  console.log(typeof q);
+   
+
   // Update the question text
   const questionEl = document.querySelector("#question-title");
-  console.log(questionEl);
+   
   questionEl.innerHTML = q.question;
-  console.log((questionEl.innerHTML));
-
+   
   // Update the choice button text
 
   const optionA = document.querySelector("#optionA");
@@ -30,7 +27,6 @@ function showQuestion() {
   optionC.innerHTML = q.choices[2];
   const optionD = document.querySelector("#optionD");
   optionD.innerHTML = q.choices[3];
-  console.log(optionA, optionB, optionC, optionD);
     
 }
 var wins = 0;
@@ -43,7 +39,7 @@ function checkAnswer(userInput) {
   const q = questions[currentQuestion];
   console.log(q.answer);
 
-  // Compare the user's input to the correct answer
+  // Compare the user's input to the correct answer and calculated the scores by adding wins
   const result = document.querySelector("#result");
   if (userInput === q.answer) {
     result.innerHTML = "Correct!";
@@ -61,13 +57,10 @@ function checkAnswer(userInput) {
 
     endscr.classList.remove("hide");
      
-    // questionscr.classList.add("hidden");
-    
-    // result.innerHTML = "You have completed the quiz!";
-     
     totalres.textContent = wins; 
+
     console.log(totalres.textContent);
-    // + " correct answers out of " + questions.length;
+     
      
   }
  }
@@ -80,7 +73,6 @@ startQuiz.addEventListener("click", showQuestion);
  
 var timeLeft = document.querySelector("#time");
 
-console.log(typeof secondsLeft);
 var timerInterval;
 startQuiz.addEventListener("click", setTime);
 
@@ -92,6 +84,8 @@ function setTime() {
       if(secondsLeft === 0) {
         // Stops execution of action at set interval
         clearInterval(timerInterval);
+        endscr.classList.remove("hide");
+        totalres.textContent = wins; 
         alert("Time finished");
       }
     }, 1000);
@@ -103,13 +97,14 @@ function storeHighscore(initials, wins) {
   console.log(initials);
   localStorage.setItem("wins", wins);
   console.log(wins);
+
   // Get the existing highscores from local storage
   let highscores = JSON.parse(localStorage.getItem("highscores")) || [];
 
   // Add the new highscore
   highscores.push({ initials: initials, "wins": wins });
 
-  // Store the updated highscores in local storage
+  // Stores the updated highscores in local storage
   localStorage.setItem("highscores", JSON.stringify(highscores));
 };
 
