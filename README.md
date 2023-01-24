@@ -3,14 +3,14 @@ This repository contains a timed coding Java Script quiz with multiple-choice qu
 
 ## Description
 
-Java Script quiz runs for a set time timit, stores high scores and displays them after the quiz is finished. Questions contain buttons for each answer. When answer is clicked, the next question appears. Each incorrect answer will result in sutraction of remaining time. After quiz is done or time limit forthe quiz is finished user is asked to submit initials that are stored together with scores in local storage.
+Java Script quiz runs for a set time timit, stores high scores and displays them after the quiz is finished. Questions contain buttons for each answer. When answer is clicked, the next question appears. Each incorrect answer will result in subtraction of remaining time. After quiz is done or time limit for the quiz is finished user is asked to submit initials that are stored together with scores in local storage.
 This app runs in the browser and features dynamically updated HTML and CSS powered by JavaScript.  
 
 ## Installation
 N/A
 
 ## Usage 
-This webpage is deployed  at live URL, you can access it using: https://web3cryptoidea.github.io/javascript-quiz/
+This webpage is deployed  at live URL, you can access it using: https://web3cryptoidea.github.io/java-script-quiz/
 
 It looks like this:
 
